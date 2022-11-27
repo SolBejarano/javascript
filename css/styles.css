@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url(//fonts.googleapis.com/css2?family=Fira+Sans:wght@300&family=Montserrat:wght@800&family=Roboto:wght@900&display=swap);
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url(https://fonts.googleapis.com/css2?family=Pacifico&display=swap);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.background {
+  background-color: #aec0d4;
+}
+
+.main section p {
+  margin: 30px;
+  padding: 15px;
+  width: 80%;
+}
+
+.contenedorTitulos {
+  margin-top: 130px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tituloPrincipal {
+  color: black;
+  font-family: "Pacifico", cursive;
+  font-weight: lighter;
+  font-size: 40px;
+  text-align: center;
+  top: 10px;
+  bottom: 20px;
+}
+
+.frase {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: thin;
+  font-size: 23px;
+  text-align: center;
+  width: 40%;
+}
+
+.mainImageSize {
+  background-size: cover;
+  width: 100%;
+  height: 105vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation-name: inicio;
+  animation-duration: 3s;
+}
+
+.mainImageSize {
+  background-image: url("../images/background.png");
+}
+
+.mainImageSize .contenedorInfo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.mainImageSize .infoAstrologa {
+  padding: 20px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainImageSize .infoAstrologa__image {
+  padding: 10px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  max-height: 120px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  top: 10px;
+  z-index: 10;
+}
+
+.header__logo {
+  height: 100px;
+  width: 100px;
+  margin-left: 30px;
+}
+
+.header__list {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 10px;
+  right: 10px;
+  margin-right: 20px;
+}
+
+.header__textos {
+  width: 30px;
+  height: 20px;
+  align-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  align-items: center;
+  color: #F2EFDB;
+  font-weight: bold;
+}
+
+.navbar {
+  list-style-type: none;
+  font-size: 16px;
+}
+
+.header__open {
+  display: none;
+}
+
+.cerrar {
+  display: none;
+}
+
+.footer {
+  width: 100%;
+  max-height: 200px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 10px;
+  margin-top: 50px;
+  background-color: rgba(242, 242, 242, 0.5);
+}
+
+.footer__div {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__titulo {
+  color: black;
+  font-family: "Pacifico", cursive;
+  font-weight: lighter;
+  font-size: 25px;
+  text-align: center;
+  top: 10px;
+  bottom: 20px;
+}
+
+.footer__logo {
+  flex: block;
+  width: 200px;
+  height: 100px;
+}
+
+.footer__list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn-instagram {
+  color: #833AB4;
+  text-decoration: none;
+}
+
+.btn-facebook {
+  color: #3b5998;
+  text-decoration: none;
+}
+
+.btn-twitter {
+  color: #1DA1F2;
+  text-decoration: none;
+}
+
+.btn-whatsapp {
+  color: #25D366;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

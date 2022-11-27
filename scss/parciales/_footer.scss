@@ -1,0 +1,60 @@
+.footer {
+    width: 100%;
+    max-height: 200px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 10px;
+    margin-top: 50px;
+    background-color: $color-secudario;
+
+
+&__div {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+&__titulo {
+        color: black;
+        font-family: $font-family-title;
+        font-weight: lighter;
+        font-size: 25px;
+        text-align: center;
+        top: 10px;
+        bottom: 20px;
+}
+&__logo {
+    flex: block;
+    width: 200px;
+    height: 100px;
+}
+&__list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-family: $font-family;
+    font-weight: bold;
+    font-size: 14px;
+
+}
+}
+$redes: (
+    instagram:#833AB4,
+    facebook: #3b5998,
+    twitter:#1DA1F2,
+    whatsapp:#25D366
+);
+@each $key,
+$value in $redes {
+    .btn-#{$key} {
+        color: $value;
+        text-decoration: none;
+    }
+}
