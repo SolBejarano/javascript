@@ -38,7 +38,7 @@ let mesNacimiento = prompt("De qué mes?").toLowerCase();*/
 } else if ((diaNacimiento >= 22) && (mesNacimiento == `febrero`) || (diaNacimiento <= 20) && (mesNacimiento == `marzo`)) { alert(`Si naciste el ${diaNacimiento} de ${mesNacimiento} el sol estaba transitando la constelacion de Piscis al momento de tu nacimiento`);
  }*/
 
-function consultarFecha() {
+/*function consultarFecha() {
     let nombre = prompt("Cómo es tu nombre?")
     let diaNacimiento = parseInt(prompt("Que dia naciste?"));
     let mesNacimiento = prompt("De qué mes?").toLowerCase();
@@ -75,7 +75,7 @@ function consultarFecha() {
     return fechaNacimiento
 }
 
-consultarFecha()
+consultarFecha()*/
 
 class signo {
     constructor(orden, nombre, fechas, regente, elemento, descripcion) {
@@ -116,14 +116,28 @@ console.log(filtrarFuego)
 
 /*Acá puedo fitrar y crear un nuevo array con los signos que contengan x elemento*/
 
-let signoUsuario = prompt("Cual es tu signo?");
+/*let signoUsuario = prompt("Cual es tu signo?");
 
 const busquedaSigno = signos.find(signo => signo.nombre == signoUsuario);
 
-console.log(busquedaSigno)
+console.log(busquedaSigno)*/
 
 /*El signo se tiene que escribir con la primera letra en mayúscula en el prompt, al usar el .toLowerCase
 en el prompt y en el this.name solamente me muestra el primer objeto, escriba el nombre del signo que escriba*/
 
+const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
+    let selectorMes = document.getElementsById ("meses").innerHTML;
+    meses.forEach(element => {
+    let optionMes= document.createElement ("<opction value></option>")
+    optionMes.innerHTML= ("<opction value></option>")
+    }); 
 
+function seleccionarAño () {
+let fecha = new Date();
+let año = fecha.getFullYear();
+let selector= document.getElementsById ("año"); 
+for(let i = 1930; i < año; i++){
+document.createElement('<option value=+i+>'+i+'</option>');
+}
+}
