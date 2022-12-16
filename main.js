@@ -125,19 +125,36 @@ console.log(busquedaSigno)*/
 /*El signo se tiene que escribir con la primera letra en mayúscula en el prompt, al usar el .toLowerCase
 en el prompt y en el this.name solamente me muestra el primer objeto, escriba el nombre del signo que escriba*/
 
+
+    let selectorDias = document.getElementById("dias")
+    for (let i = 1; i <= 31; i++) {
+        selectorDias.innerHTML += `<option value="${i}">${i}</option>`;
+    }
+
+
 const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
-    let selectorMes = document.getElementsById ("meses").innerHTML;
-    meses.forEach(element => {
-    let optionMes= document.createElement ("<opction value></option>")
-    optionMes.innerHTML= ("<opction value></option>")
-    }); 
+let selectorMes = document.getElementById("meses");
+selectorMes.innerHTML = "";
+meses.forEach((mes) => {
+    selectorMes.innerHTML += `<option value="${mes}">${mes}</option>`;
+});
 
-function seleccionarAño () {
+
+let selectorAño = document.getElementById("año");
 let fecha = new Date();
 let año = fecha.getFullYear();
-let selector= document.getElementsById ("año"); 
-for(let i = 1930; i < año; i++){
-document.createElement('<option value=+i+>'+i+'</option>');
+for (let i = 1930; i <= año; i++) {
+    selectorAño.innerHTML += `<option value="${i}">${i}</option>`;
 }
+
+const boton = document.getElementById ("btn") 
+let fechaNacimiento = selectorDias.value + selectorMes.value + selectorAño.value; 
+
+boton.onclik = (e) => {
+    console.log (fechaNacimiento)
+
 }
+
+
+
