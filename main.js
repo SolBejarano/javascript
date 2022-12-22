@@ -185,10 +185,13 @@ let diaNacimiento = selectorDias.value
 selectorMes.onchange = () => {
     console.log(selectorMes.value)
 }
-let mesNacimiento = selectorMes.value
+
+let añoNacimiento = selectorAño.value
+
 selectorAño.onchange = () => {
     console.log(selectorAño.value)
 }
+
 
 /* Para poder "recolectar" la info de los usuarios creo un usuario que va a estar en un array de usuarios*/
 
@@ -220,18 +223,22 @@ form.onclick = (e) => {
 
 /* En esta parte de la función tengo mis dudas, acá tengo el problema 
 que me borra los datos del nombre, y no me selecciona la info en los
-selectores*/ 
+selectores*/
 
 function agregarUsuario() {
     const nombre = document.getElementById("input").value;
-    selectorMes.onchange = () => { 
-        const mesNacimiento= selectorMes.value 
+    selectorAño.onchange = () => {
+        const añoNacimiento= selectorAño.value;
+        const horaNacimiento = selectorHora.value;
+        const mesNacimiento = selectorMes.value;
+        const minutosNacimiento = selectorMinutos.value;
+        const paisNacimiento= selectorPaises.value;
+        const nuevoUsuario = (nombre, mesNacimiento, añoNacimiento, horaNacimiento, minutosNacimiento, paisNacimiento)
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        form.reset();
     }
-   selectorAño.onchange = () => {
-    const añoNacimiento= selectorAño.value;}
-    const horaNacimiento = selectorHora.value;
-    const minutosNacimiento = selectorMinutos.value;
-    const nuevoUsuario = (nombre, mesNacimiento, añoNacimiento, horaNacimiento, minutosNacimiento)
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
-    form.reset();
-}
+    }
+
+    agregarUsuario ()
+    
+    /* el añoNacimiento cuando quiero elegirlo me borra todo lo ya elegido en el HTML*/ 
