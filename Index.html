@@ -58,8 +58,8 @@
                 </div>
             </div>
 
-            <form class="form" action="">
-                <input class="form__input" type="text" placeholder="nombre">
+            <form id= "form" class="form" action="">
+                <input id="input" class="form__input" type="text" placeholder="nombre">
                 <div class="form__div">
                     <p class="form__p">Fecha de nacimiento</p>
                     <select name="dias" id="dias">
@@ -68,7 +68,20 @@
                     </select>
                     <select name="año" id="año"></select>
                 </div>
-                <button id="btn">Calcular carta Astral</button>
+                <div class="form__div">
+                    <p class="form__p">Hora de nacimiento</p>
+                    <select name="hora" id="hora">
+                    </select>
+                    <select name="minutos" id="minutos">
+                    </select>
+                </div>
+                <div class="form__div">
+                    <p class="form__p">Lugar de nacimiento</p>
+                    <select name="pais" id="pais">
+                    </select>
+    
+                </div>
+                <button id="btn" class="form__btn">Calcular carta Astral</button>
             </form>
            
     </main>

@@ -13,6 +13,7 @@
     padding: 15px;
     width: 80%;
 }
+
 .contenedorTitulos {
     margin-top: 130px;
     margin-bottom: 20px;
@@ -65,6 +66,7 @@
         align-items: center;
         gap: 10px;
     }
+
     .infoAstrologa {
         padding: 20px;
         width: 60%;
@@ -79,8 +81,9 @@
             border-radius: 50%;
         }
     }
-    
+
 }
+
 .form {
     padding: 20px;
     width: 70%;
@@ -91,9 +94,9 @@
 
 
     &__input {
-        font-family: $font-family; 
+        font-family: $font-family;
         width: 30%;
-       padding: 10px;
+        padding: 10px;
     }
 
     &__div {
@@ -106,8 +109,14 @@
     }
 
     &__p {
-        font-family: $font-family; 
+        font-family: $font-family;
         font-size: 16px;
     }
 
+    &__btn {
+        gap: 30px;
+        color: grey;
+        font-family: $font-family;
+        font-size: 16px; 
+    }
 }
