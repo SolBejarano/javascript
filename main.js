@@ -132,7 +132,7 @@ class usuario {
 
 /*En este punto anterior, me genera dudas si ya se debería aplicar la lógica
 de sol, ascendente etc, según datos ingresados o si una vez ingresados 
-la lógica se aplica después*/ 
+la lógica se aplica después*/
 
 const usuarios = [];
 
@@ -146,7 +146,7 @@ if (localStorage.getItem`usuarios`) {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     agregarUsuario();
-  });
+});
 
 
 /* En esta parte de la función tengo mis dudas, acá tengo el problema 
@@ -155,16 +155,16 @@ selectores*/
 
 function agregarUsuario() {
     const nombre = document.getElementById("input").value;
-    selectorAño.onchange = () => {
-        const añoNacimiento= selectorAño.value;
-        const horaNacimiento = selectorHora.value;
-        const mesNacimiento = selectorMes.value;
-        const minutosNacimiento = selectorMinutos.value;
-        const paisNacimiento= selectorPaises.value; 
-        const nuevoUsuario = (nombre, mesNacimiento, añoNacimiento, horaNacimiento, minutosNacimiento, paisNacimiento) 
-        usuarios.push (nuevoUsuario);
-        localStorage.setItem('usuarios', JSON.stringify(usuarios));  } 
-        form.reset();
-    }
-    
-    /* No se me guarda en el storage*/ 
+    const diaNacimiento = getElementById("dia").value;
+    const añoNacimiento = getElementById("año").value;
+    const horaNacimiento = getElementById("hora").value;
+    const mesNacimiento = getElementById("meses").value;
+    const minutosNacimiento = getElementById("minutos").value;
+    const paisNacimiento = getElementById("pais").value;
+    const nuevoUsuario = (nombre, diaNacimiento, mesNacimiento, añoNacimiento, horaNacimiento, minutosNacimiento, paisNacimiento)
+    usuarios.push(nuevoUsuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+    form.reset();
+}
+
+/* No se me guarda en el storage*/
