@@ -55,7 +55,8 @@ for (let i = 1; i <= 31; i++) {
 }
 
 
-const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
+    "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
 
 const selectorMes = document.getElementById("meses");
 selectorMes.innerHTML = "";
@@ -80,11 +81,39 @@ const selectorMinutos = document.getElementById("minutos");
 for (let i = 0; i < 60; i++) {
     selectorMinutos.innerHTML += `<option value="${i}">${i}</option>`;
 }
-selectorMinutos.onChange = () => {
-    console.log(selectorMinutos.value)
-}
 
-const paises = ["Afganistán", "Albania", "Alemania", "Andorra", "Angola", "Antigua y Barbuda", "Arabia Saudita", "Argelia", "Argentina", "Armenia", "Australia", "Austria", "Azerbaiyán", "Bahamas", "Bangladés", "Barbados", "Baréin", "Bélgica", "Belice", "Benín", "Bielorrusia", "Birmania", "Bolivia", "Bosnia y Herzegovina", "Botsuana", "Brasil", "Brunéi", "Bulgaria", "Burkina Faso", "Burundi", "Bután", "Cabo Verde", "Camboya", "Camerún", "Canadá", "Catar", "Chad", "Chile", "China", "Chipre", "Ciudad del Vaticano", "Colombia", "Comoras", "Corea del Norte", "Corea del Sur", "Costa de Marfil", "Costa Rica", "Croacia", "Cuba", "Dinamarca", "Dominica", "Ecuador", "Egipto", "El Salvador", "Emiratos Árabes Unidos", "Eritrea", "Eslovaquia", "Eslovenia", "España", "Estados Unidos", "Estonia", "Etiopía", "Filipinas", "Finlandia", "Fiyi", "Francia", "Gabón", "Gambia", "Georgia", "Ghana", "Granada", "Grecia", "Guatemala", "Guyana", "Guinea", "Guinea ecuatorial", "Guinea-Bisáu", "Haití", "Honduras", "Hungría", "India", "Indonesia", "Irak", "Irán", "Irlanda", "Islandia", "Islas Marshall", "Islas Salomón", "Israel", "Italia", "Jamaica", "Japón", "Jordania", "Kazajistán", "Kenia", "Kirguistán", "Kiribati", "Kuwait", "Laos", "Lesoto", "Letonia", "Líbano", "Liberia", "Libia", "Liechtenstein", "Lituania", "Luxemburgo", "Madagascar", "Malasia", "Malaui", "Maldivas", "Malí", "Malta", "Marruecos", "Mauricio", "Mauritania", "México", "Micronesia", "Moldavia", "Mónaco", "Mongolia", "Montenegro", "Mozambique", "Namibia", "Nauru", "Nepal", "Nicaragua", "Níger", "Nigeria", "Noruega", "Nueva Zelanda", "Omán", "Países Bajos", "Pakistán", "Palaos", "Palestina", "Panamá", "Papúa Nueva Guinea", "Paraguay", "Perú", "Polonia", "Portugal", "Reino Unido", "República Centroafricana", "República Checa", "República de Macedonia", "República del Congo", "República Democrática del Congo", "República Dominicana", "República Sudafricana", "Ruanda", "Rumanía", "Rusia", "Samoa", "San Cristóbal y Nieves", "San Marino", "San Vicente y las Granadinas", "Santa Lucía", "Santo Tomé y Príncipe", "Senegal", "Serbia", "Seychelles", "Sierra Leona", "Singapur", "Siria", "Somalia", "Sri Lanka", "Suazilandia", "Sudán", "Sudán del Sur", "Suecia", "Suiza", "Surinam", "Tailandia", "Tanzania", "Tayikistán", "Timor Oriental", "Togo", "Tonga", "Trinidad y Tobago", "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda", "Uruguay", "Uzbekistán", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Yibuti", "Zambia", "Zimbabue"]
+const paises = ["Afganistán", "Albania", "Alemania", "Andorra", "Angola",
+    "Antigua y Barbuda", "Arabia Saudita", "Argelia", "Argentina", "Armenia",
+    "Australia", "Austria", "Azerbaiyán", "Bahamas", "Bangladés", "Barbados",
+    "Baréin", "Bélgica", "Belice", "Benín", "Bielorrusia", "Birmania", "Bolivia",
+    "Bosnia y Herzegovina", "Botsuana", "Brasil", "Brunéi", "Bulgaria", "Burkina Faso",
+    "Burundi", "Bután", "Cabo Verde", "Camboya", "Camerún", "Canadá", "Catar", "Chad",
+    "Chile", "China", "Chipre", "Ciudad del Vaticano", "Colombia", "Comoras",
+    "Corea del Norte", "Corea del Sur", "Costa de Marfil", "Costa Rica", "Croacia",
+    "Cuba", "Dinamarca", "Dominica", "Ecuador", "Egipto", "El Salvador",
+    "Emiratos Árabes Unidos", "Eritrea", "Eslovaquia", "Eslovenia", "España",
+    "Estados Unidos", "Estonia", "Etiopía", "Filipinas", "Finlandia", "Fiyi",
+    "Francia", "Gabón", "Gambia", "Georgia", "Ghana", "Granada", "Grecia", "Guatemala",
+    "Guyana", "Guinea", "Guinea ecuatorial", "Guinea-Bisáu", "Haití", "Honduras",
+    "Hungría", "India", "Indonesia", "Irak", "Irán", "Irlanda", "Islandia",
+    "Islas Marshall", "Islas Salomón", "Israel", "Italia", "Jamaica", "Japón",
+    "Jordania", "Kazajistán", "Kenia", "Kirguistán", "Kiribati", "Kuwait", "Laos",
+    "Lesoto", "Letonia", "Líbano", "Liberia", "Libia", "Liechtenstein", "Lituania",
+    "Luxemburgo", "Madagascar", "Malasia", "Malaui", "Maldivas", "Malí", "Malta",
+    "Marruecos", "Mauricio", "Mauritania", "México", "Micronesia", "Moldavia",
+    "Mónaco", "Mongolia", "Montenegro", "Mozambique", "Namibia", "Nauru", "Nepal",
+    "Nicaragua", "Níger", "Nigeria", "Noruega", "Nueva Zelanda", "Omán", "Países Bajos",
+    "Pakistán", "Palaos", "Palestina", "Panamá", "Papúa Nueva Guinea", "Paraguay", "Perú",
+    "Polonia", "Portugal", "Reino Unido", "República Centroafricana", "República Checa",
+    "República de Macedonia", "República del Congo", "República Democrática del Congo",
+    "República Dominicana", "República Sudafricana", "Ruanda", "Rumanía", "Rusia",
+    "Samoa", "San Cristóbal y Nieves", "San Marino", "San Vicente y las Granadinas",
+    "Santa Lucía", "Santo Tomé y Príncipe", "Senegal", "Serbia", "Seychelles",
+    "Sierra Leona", "Singapur", "Siria", "Somalia", "Sri Lanka", "Suazilandia",
+    "Sudán", "Sudán del Sur", "Suecia", "Suiza", "Surinam", "Tailandia", "Tanzania",
+    "Tayikistán", "Timor Oriental", "Togo", "Tonga", "Trinidad y Tobago", "Túnez",
+    "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda", "Uruguay", "Uzbekistán",
+    "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Yibuti", "Zambia", "Zimbabue"];
 
 let selectorPaises = document.getElementById("pais")
 
@@ -103,30 +132,41 @@ selectorDias.onchange = () => {
 
     console.log(selectorDias.value)
 }
-let diaNacimiento = selectorDias.value
 
 selectorMes.onchange = () => {
     console.log(selectorMes.value)
 }
 
-let añoNacimiento = selectorAño.value
-
 selectorAño.onchange = () => {
     console.log(selectorAño.value)
+}
+
+selectorHora.onchange = () => {
+    console.log(selectorHora.value)
+}
+
+selectorMinutos.onChange = () => {
+    console.log(selectorMinutos.value)
+}
+selectorPaises.onChange = () => {
+    console.log(selectorPaises.value)
 }
 
 
 /* Para poder "recolectar" la info de los usuarios creo un usuario que va a estar en un array de usuarios*/
 
 class usuario {
-    constructor(nombre, diaNacimiento, mesNacimiento, añoNacimiento, horaNacimiento, minutosNacimiento) {
+    constructor(nombreUsuario, diaNacimientoUsuario, mesNacimientoUsuario,
+        añoNacimientoUsuario, horaNacimientoUsuario, minutosNacimientoUsuario,
+        paisNacimientoUsuario) {
 
-        this.nombre = nombre;
-        this.diaNacimiento = diaNacimiento;
-        this.mesNacimiento = mesNacimiento;
-        this.añoNacimiento = añoNacimiento;
-        this.horaNacimiento = horaNacimiento;
-        this.minutosNacimiento = minutosNacimiento;
+        this.nombreUsuario = nombreUsuario;
+        this.diaNacimientoUsuario = diaNacimientoUsuario;
+        this.mesNacimientoUsuario = mesNacimientoUsuario;
+        this.añoNacimientoUsuario = añoNacimientoUsuario;
+        this.horaNacimientoUsuario = horaNacimientoUsuario;
+        this.minutosNacimientoUsuario = minutosNacimientoUsuario;
+        this.paisNacimientoUsuario = paisNacimientoUsuario;
     }
 }
 
@@ -146,6 +186,7 @@ if (localStorage.getItem`usuarios`) {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     agregarUsuario();
+    mostrarUsuarios ();
 });
 
 
@@ -155,16 +196,37 @@ selectores*/
 
 function agregarUsuario() {
     const nombre = document.getElementById("input").value;
-    const diaNacimiento = getElementById("dia").value;
-    const añoNacimiento = getElementById("año").value;
-    const horaNacimiento = getElementById("hora").value;
-    const mesNacimiento = getElementById("meses").value;
-    const minutosNacimiento = getElementById("minutos").value;
-    const paisNacimiento = getElementById("pais").value;
-    const nuevoUsuario = (nombre, diaNacimiento, mesNacimiento, añoNacimiento, horaNacimiento, minutosNacimiento, paisNacimiento)
+    const diaNacimiento = document.getElementById("dias").value;
+    const añoNacimiento = document.getElementById("año").value;
+    const horaNacimiento = document.getElementById("hora").value;
+    const mesNacimiento = document.getElementById("meses").value;
+    const minutosNacimiento = document.getElementById("minutos").value;
+    const paisNacimiento = document.getElementById("pais").value;
+    const nuevoUsuario = new usuario(nombre, diaNacimiento, mesNacimiento, añoNacimiento, horaNacimiento, minutosNacimiento, paisNacimiento)
     usuarios.push(nuevoUsuario);
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
     form.reset();
+    return nuevoUsuario;
 }
 
-/* No se me guarda en el storage*/
+
+/* Acá guardo los usuarios en el storage para poder darle la información
+equivalente a signo solar y ascendente*/
+
+const usuariosNuevos = document.getElementById('usuarios');
+
+const mostrarUsuarios = () => {
+    const usuariosGuardados = JSON.parse(localStorage.getItem("usuarios"));
+
+    usuariosGuardados.forEach(usuario => {
+        div.innerHTML += `
+                        <div class='usuarios'>
+                            <h3>${usuario.nombre}</h3>
+                            <h4>Fecha de nacimiento: ${usuario.diaNacimiento} de ${usuario.mesNacimiento} de ${usuario.añoNacimiento}</h4>
+                            <h5>Hora de nacimiento: ${usuario.horaNacimiento} : ${usuario.minutosNacimiento}</h5>
+                            <h6>País de nacimiento: ${usuario.paisNacimiento}</h6>
+                        </div>
+                        `
+        usuariosNuevos.appendChild(div);
+    })
+}
