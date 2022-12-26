@@ -209,7 +209,6 @@ function agregarUsuario() {
     return nuevoUsuario;
 }
 
-
 /* Acá guardo los usuarios en el storage para poder darle la información
 equivalente a signo solar y ascendente*/
 
@@ -218,13 +217,15 @@ const usuariosNuevos = document.getElementById('usuarios');
 const mostrarUsuarios = () => {
     const usuariosGuardados = JSON.parse(localStorage.getItem("usuarios"));
 
-    usuariosGuardados.forEach(usuario => {
+        usuarios.innerHTML = '';
+        usuarios.forEach((usuario) => {
+            const div = document.createElement('div');
         div.innerHTML += `
                         <div class='usuarios'>
-                            <h3>${usuario.nombre}</h3>
-                            <h4>Fecha de nacimiento: ${usuario.diaNacimiento} de ${usuario.mesNacimiento} de ${usuario.añoNacimiento}</h4>
-                            <h5>Hora de nacimiento: ${usuario.horaNacimiento} : ${usuario.minutosNacimiento}</h5>
-                            <h6>País de nacimiento: ${usuario.paisNacimiento}</h6>
+                            <h3>${nombreUsuario}</h3>
+                            <h4>Fecha de nacimiento: ${diaNacimientoUsuario} de ${mesNacimientoUsuario} de ${añoNacimientoUsuario}</h4>
+                            <h5>Hora de nacimiento: ${horaNacimientoUsuario} : ${minutosNacimientoUsuario}</h5>
+                            <h6>País de nacimiento: ${paisNacimientoUsuario}</h6>
                         </div>
                         `
         usuariosNuevos.appendChild(div);
