@@ -215,7 +215,6 @@ equivalente a signo solar y ascendente*/
 const usuariosNuevos = document.getElementById('usuarios');
 
 const mostrarUsuarios = () => {
-    const usuariosGuardados = JSON.parse(localStorage.getItem('usuarios'));
 
     usuarios.innerHTML = '';
     usuarios.forEach((usuario) => {
