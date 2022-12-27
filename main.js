@@ -176,8 +176,8 @@ la lógica se aplica después*/
 
 const usuarios = [];
 
-if (localStorage.getItem`usuarios`) {
-    let usuario = JSON.parse(localStorage.getItem(`usuarios`));
+if (localStorage.getItem(usuarios)) {
+    let usuario = JSON.parse(localStorage.getItem(usuarios));
     for (let i = 0; i < usuario.length; i++) {
         usuarios.push(usuario[i]);
     }
@@ -212,51 +212,10 @@ function agregarUsuario() {
 /* Acá guardo los usuarios en el storage para poder darle la información
 equivalente a signo solar y ascendente*/
 
-/*function signoSolar() {
-    let signoSolar = diaNacimiento + mesNacimiento; 
-if (diaNacimientoUsuario >= 21 && mesNacimientoUsuario == "marzo"
-    || diaNacimiento <= 19 && mesNacimiento == "abril") {
-    signoSolar = aries;
-} else if (diaNacimientoUsuario >= 20 &&
-    mesNacimientoUsuario == "abril" || diaNacimiento <= 20 && mesNacimiento == "mayo") {
-   signoSolar = tauro;
-} else if ((diaNacimientoUsuario >= 21 &&
-    mesNacimientoUsuario == "mayo") || (diaNacimiento <= 20 && mesNacimiento == "junio")) {
-    signoSolar = geminis;
-} else if ((diaNacimientoUsuario >= 23 &&
-    mesNacimientoUsuario == "julio") || (diaNacimiento <= 22 && mesNacimiento == "julio")) {
-    signoSolar = cancer;
-} else if ((diaNacimientoUsuario >= 23 &&
-    mesNacimientoUsuario == "julio") || (diaNacimiento <= 22 && mesNacimiento == "agosto")) {
-    signoSolar = leo;
-} else if ((diaNacimientoUsuario >= 23 &&
-    mesNacimientoUsuario == "agosto") || (diaNacimiento <= 22 && mesNacimiento == "septiembre")) {
-    signoSolar = virgo;
-} else if ((diaNacimientoUsuario >= 23 &&
-    mesNacimientoUsuario == "septiembre") || (diaNacimiento <= 22 && mesNacimiento == "octubre")) {
-    console.log(signoSolar = libra);
-} else if ((diaNacimientoUsuario >= 23 &&
-    mesNacimientoUsuario == "octubre") || (diaNacimiento <= 21 && mesNacimiento == "noviembre")) {
-    console.log (signoSolar = escorpio);
-} else if ((diaNacimientoUsuario >= 22 &&
-    mesNacimientoUsuario == "noviembre") || (diaNacimiento <= 21 && mesNacimiento == "diciembre")) {
-    console.log(signoSolar = sagitario);
-} else if ((diaNacimientoUsuario >= 22 &&
-    mesNacimientoUsuario == "diciembre") || (diaNacimiento <= 19 && mesNacimiento == "enero")) {
-    signoSolar = capricornio;
-} else if ((diaNacimientoUsuario >= 20 &&
-    mesNacimientoUsuario == "enero") || (diaNacimiento <= 18 && mesNacimiento == "febrero")) {
-    signoSolar = acuario;
-} else if ((diaNacimientoUsuario >= 19 &&
-    mesNacimientoUsuario == "febrero") || (diaNacimiento <= 20 && mesNacimiento == "marzo")) {
-    signoSolar = piscis;
-}
-return signoSolar 
-}*/
 const usuariosNuevos = document.getElementById('usuarios');
 
 const mostrarUsuarios = () => {
-    const usuariosGuardados = JSON.parse(localStorage.getItem("usuarios"));
+    const usuariosGuardados = JSON.parse(localStorage.getItem('usuarios'));
 
     usuarios.innerHTML = '';
     usuarios.forEach((usuario) => {
@@ -273,3 +232,4 @@ const mostrarUsuarios = () => {
         usuariosNuevos.appendChild(div);
     })
 }
+
