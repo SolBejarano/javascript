@@ -212,14 +212,12 @@ function agregarUsuario() {
 /* Acá guardo los usuarios en el storage para poder darle la información
 equivalente a signo solar y ascendente*/
 
-function signoSolar(diaNacimientoUsuario, mesNacimientoUsuario) {
-
-    let signoSolar = diaNacimientoUsuario + mesNacimientoUsuario;
-
-    signos.forEach((signo) => {
+function signoSolar (diaNacimientoUsuario, mesNacimientoUsuario) {
+    
+ let signoSolar =diaNacimientoUsuario + mesNacimientoUsuario;
         if (diaNacimientoUsuario >= 21 && mesNacimientoUsuario == "marzo"
             || diaNacimientoUsuario <= 19 && mesNacimientoUsuario == "abril") {
-            return signoSolar = aries;
+            console.log (signos.find (signo => signo.nombre = "Aries"));9x2
         } else if (diaNacimientoUsuario >= 20 &&
             mesNacimientoUsuario == "abril" || diaNacimientoUsuario <= 20 && mesNacimientoUsuario == "mayo") {
             return signoSolar = tauro;
@@ -255,10 +253,9 @@ function signoSolar(diaNacimientoUsuario, mesNacimientoUsuario) {
             signoSolar = piscis;
         }
         return signoSolar
-    })
 }
 
-let retornoSignoSolar = signoSolar;
+let retornoSignoSolar = signoSolar();
 console.log(retornoSignoSolar)
 
 const usuariosNuevos = document.getElementById('usuarios');
