@@ -212,47 +212,50 @@ function agregarUsuario() {
 /* Acá guardo los usuarios en el storage para poder darle la información
 equivalente a signo solar y ascendente*/
 
-function signoSolar (diaNacimientoUsuario, mesNacimientoUsuario) {
+let diaNacimientoUsuario = document.getElementById("dias").value;
+let mesNacimientoUsuario = document.getElementById("meses").value;
+
+function signoSolar(diaNacimientoUsuario, mesNacimientoUsuario) {
+    localStorage.getItem('usuarios', JSON.stringify(usuarios));
     
- let signoSolar =diaNacimientoUsuario + mesNacimientoUsuario;
-        if (diaNacimientoUsuario >= 21 && mesNacimientoUsuario == "marzo"
-            || diaNacimientoUsuario <= 19 && mesNacimientoUsuario == "abril") {
-            console.log (signos.find (signo => signo.nombre = "Aries"));9x2
-        } else if (diaNacimientoUsuario >= 20 &&
-            mesNacimientoUsuario == "abril" || diaNacimientoUsuario <= 20 && mesNacimientoUsuario == "mayo") {
-            return signoSolar = tauro;
-        } else if ((diaNacimientoUsuario >= 21 &&
-            mesNacimientoUsuario == "mayo") || (diaNacimientoUsuario <= 20 && mesNacimientoUsuario == "junio")) {
-            return signoSolar = geminis;
-        } else if ((diaNacimientoUsuario >= 23 &&
-            mesNacimientoUsuario == "julio") || (diaNacimientoUsuario <= 22 && mesNacimientoUsuario == "julio")) {
-            return signoSolar = cancer;
-        } else if ((diaNacimientoUsuario >= 23 &&
-            mesNacimientoUsuario == "julio") || (diaNacimientoUsuario <= 22 && mesNacimientoUsuario == "agosto")) {
-            return signoSolar = leo;
-        } else if ((diaNacimientoUsuario >= 23 &&
-            mesNacimientoUsuario == "agosto") || (diaNacimientoUsuario <= 22 && mesNacimientoUsuario == "septiembre")) {
-            return signoSolar = virgo;
-        } else if ((diaNacimientoUsuario >= 23 &&
-            mesNacimientoUsuario == "septiembre") || (diaNacimientoUsuario <= 22 && mesNacimientoUsuario == "octubre")) {
-            console.log(signoSolar = libra);
-        } else if ((diaNacimientoUsuario >= 23 &&
-            mesNacimientoUsuario == "octubre") || (diaNacimientoUsuario <= 21 && mesNacimientoUsuario == "noviembre")) {
-            console.log(signoSolar = escorpio);
-        } else if ((diaNacimientoUsuario >= 22 &&
-            mesNacimientoUsuario == "noviembre") || (diaNacimientoUsuario <= 21 && mesNacimientoUsuario == "diciembre")) {
-            console.log(signoSolar = sagitario);
-        } else if ((diaNacimientoUsuario >= 22 &&
-            mesNacimientoUsuario == "diciembre") || (diaNacimientoUsuario <= 19 && mesNacimientoUsuario == "enero")) {
-            signoSolar = capricornio;
-        } else if ((diaNacimientoUsuario >= 20 &&
-            mesNacimientoUsuario == "enero") || (diaNacimientoUsuario <= 18 && mesNacimientoUsuario == "febrero")) {
-            signoSolar = acuario;
-        } else if ((diaNacimientoUsuario >= 19 &&
-            mesNacimientoUsuario == "febrero") || (diaNacimientoUsuario <= 20 && mesNacimientoUsuario == "marzo")) {
-            signoSolar = piscis;
-        }
-        return signoSolar
+    if (diaNacimientoUsuario >= 21 && mesNacimientoUsuario == "marzo"
+        || diaNacimientoUsuario <= 19 && mesNacimientoUsuario == "abril") {
+        return aries;
+    } else if (diaNacimientoUsuario >= 20 &&
+        mesNacimientoUsuario == "abril" || diaNacimientoUsuario <= 20 && mesNacimientoUsuario == "mayo") {
+        return tauro;
+    } else if ((diaNacimientoUsuario >= 21 &&
+        mesNacimientoUsuario == "mayo") || (diaNacimientoUsuario <= 20 && mesNacimientoUsuario == "junio")) {
+        return geminis;
+    } else if ((diaNacimientoUsuario >= 23 &&
+        mesNacimientoUsuario == "julio") || (diaNacimientoUsuario <= 22 && mesNacimientoUsuario == "julio")) {
+        return cancer;
+    } else if ((diaNacimientoUsuario >= 23 &&
+        mesNacimientoUsuario == "julio") || (diaNacimientoUsuario <= 22 && mesNacimientoUsuario == "agosto")) {
+        return leo;
+    } else if ((diaNacimientoUsuario >= 23 &&
+        mesNacimientoUsuario == "agosto") || (diaNacimientoUsuario <= 22 && mesNacimientoUsuario == "septiembre")) {
+        return virgo;
+    } else if ((diaNacimientoUsuario >= 23 &&
+        mesNacimientoUsuario == "septiembre") || (diaNacimientoUsuario <= 22 && mesNacimientoUsuario == "octubre")) {
+        return libra;
+    } else if ((diaNacimientoUsuario >= 23 &&
+        mesNacimientoUsuario == "octubre") || (diaNacimientoUsuario <= 21 && mesNacimientoUsuario == "noviembre")) {
+        return escorpio;
+    } else if ((diaNacimientoUsuario >= 22 &&
+        mesNacimientoUsuario == "noviembre") || (diaNacimientoUsuario <= 21 && mesNacimientoUsuario == "diciembre")) {
+        return sagitario;
+    } else if ((diaNacimientoUsuario >= 22 &&
+        mesNacimientoUsuario == "diciembre") || (diaNacimientoUsuario <= 19 && mesNacimientoUsuario == "enero")) {
+        return capricornio;
+    } else if ((diaNacimientoUsuario >= 20 &&
+        mesNacimientoUsuario == "enero") || (diaNacimientoUsuario <= 18 && mesNacimientoUsuario == "febrero")) {
+        return acuario;
+    } else if ((diaNacimientoUsuario >= 19 &&
+        mesNacimientoUsuario == "febrero") || (diaNacimientoUsuario <= 20 && mesNacimientoUsuario == "marzo")) {
+        return piscis;
+    }
+
 }
 
 let retornoSignoSolar = signoSolar();
