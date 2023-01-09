@@ -212,14 +212,13 @@ function agregarUsuario() {
 /* Acá guardo los usuarios en el storage para poder darle la información
 equivalente a signo solar y ascendente*/
 
-let diaNacimientoUsuario = document.getElementById("dias").value;
-let mesNacimientoUsuario = document.getElementById("meses").value;
+const datosUsuario = JSON.parse(localStorage.getItem(usuarios));
 
 function signoSolar(diaNacimientoUsuario, mesNacimientoUsuario) {
-    localStorage.getItem('usuarios', JSON.stringify(usuarios));
-    
+  
     if (diaNacimientoUsuario >= 21 && mesNacimientoUsuario == "marzo"
         || diaNacimientoUsuario <= 19 && mesNacimientoUsuario == "abril") {
+        console.log(aries)
         return aries;
     } else if (diaNacimientoUsuario >= 20 &&
         mesNacimientoUsuario == "abril" || diaNacimientoUsuario <= 20 && mesNacimientoUsuario == "mayo") {
@@ -257,6 +256,7 @@ function signoSolar(diaNacimientoUsuario, mesNacimientoUsuario) {
     }
 
 }
+
 
 let retornoSignoSolar = signoSolar();
 console.log(retornoSignoSolar)
