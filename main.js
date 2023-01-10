@@ -167,12 +167,9 @@ class usuario {
         this.horaNacimientoUsuario = horaNacimientoUsuario;
         this.minutosNacimientoUsuario = minutosNacimientoUsuario;
         this.paisNacimientoUsuario = paisNacimientoUsuario;
+        this.signoSolar = signoSolar;
     }
 }
-
-/*En este punto anterior, me genera dudas si ya se debería aplicar la lógica
-de sol, ascendente etc, según datos ingresados o si una vez ingresados 
-la lógica se aplica después*/
 
 const usuarios = [];
 
@@ -214,52 +211,54 @@ equivalente a signo solar y ascendente*/
 
 const datosUsuario = JSON.parse(localStorage.getItem(usuarios));
 
-function signoSolar(diaNacimientoUsuario, mesNacimientoUsuario) {
-  
-    if (diaNacimientoUsuario >= 21 && mesNacimientoUsuario == "marzo"
-        || diaNacimientoUsuario <= 19 && mesNacimientoUsuario == "abril") {
+function signoSolar(diaNacimiento, mesNacimiento) {
+
+    if (diaNacimiento >= 21 && mesNacimiento == "marzo"
+        || diaNacimiento <= 19 && mesNacimiento == "abril") {
         console.log(aries)
-        return aries.nombre, aries.fechas, aries.elemento;
-    } else if (diaNacimientoUsuario >= 20 &&
-        mesNacimientoUsuario == "abril" || diaNacimientoUsuario <= 20 && mesNacimientoUsuario == "mayo") {
+        return aries.nombre;
+    } else if (diaNacimiento >= 20 &&
+        mesNacimiento == "abril" || diaNacimiento <= 20 && mesNacimiento == "mayo") {
         return tauro;
-    } else if ((diaNacimientoUsuario >= 21 &&
-        mesNacimientoUsuario == "mayo") || (diaNacimientoUsuario <= 20 && mesNacimientoUsuario == "junio")) {
-        return geminis;
-    } else if ((diaNacimientoUsuario >= 23 &&
-        mesNacimientoUsuario == "julio") || (diaNacimientoUsuario <= 22 && mesNacimientoUsuario == "julio")) {
+    } else if ((diaNacimiento >= 21 &&
+        mesNacimiento == "mayo") || (diaNacimiento <= 20 && mesNacimiento == "junio")) {
+        return geminis.nombre;
+    } else if ((diaNacimiento >= 23 &&
+        mesNacimiento == "julio") || (diaNacimiento <= 22 && mesNacimiento == "julio")) {
         return cancer;
-    } else if ((diaNacimientoUsuario >= 23 &&
-        mesNacimientoUsuario == "julio") || (diaNacimientoUsuario <= 22 && mesNacimientoUsuario == "agosto")) {
+    } else if ((diaNacimiento >= 23 &&
+        mesNacimiento == "julio") || (diaNacimiento <= 22 && mesNacimiento == "agosto")) {
         return leo;
-    } else if ((diaNacimientoUsuario >= 23 &&
-        mesNacimientoUsuario == "agosto") || (diaNacimientoUsuario <= 22 && mesNacimientoUsuario == "septiembre")) {
+    } else if ((diaNacimiento >= 23 &&
+        mesNacimiento == "agosto") || (diaNacimiento <= 22 && mesNacimiento == "septiembre")) {
         return virgo;
-    } else if ((diaNacimientoUsuario >= 23 &&
-        mesNacimientoUsuario == "septiembre") || (diaNacimientoUsuario <= 22 && mesNacimientoUsuario == "octubre")) {
+    } else if ((diaNacimiento >= 23 &&
+        mesNacimiento == "septiembre") || (diaNacimiento <= 22 && mesNacimiento == "octubre")) {
         return libra;
-    } else if ((diaNacimientoUsuario >= 23 &&
-        mesNacimientoUsuario == "octubre") || (diaNacimientoUsuario <= 21 && mesNacimientoUsuario == "noviembre")) {
+    } else if ((diaNacimiento >= 23 &&
+        mesNacimiento == "octubre") || (diaNacimiento <= 21 && mesNacimiento == "noviembre")) {
         return escorpio;
-    } else if ((diaNacimientoUsuario >= 22 &&
-        mesNacimientoUsuario == "noviembre") || (diaNacimientoUsuario <= 21 && mesNacimientoUsuario == "diciembre")) {
+    } else if ((diaNacimiento >= 22 &&
+        mesNacimiento == "noviembre") || (diaNacimiento <= 21 && mesNacimiento == "diciembre")) {
         return sagitario;
-    } else if ((diaNacimientoUsuario >= 22 &&
-        mesNacimientoUsuario == "diciembre") || (diaNacimientoUsuario <= 19 && mesNacimientoUsuario == "enero")) {
+    } else if ((diaNacimiento >= 22 &&
+        mesNacimiento == "diciembre") || (diaNacimiento <= 19 && mesNacimiento == "enero")) {
         return capricornio;
-    } else if ((diaNacimientoUsuario >= 20 &&
-        mesNacimientoUsuario == "enero") || (diaNacimientoUsuario <= 18 && mesNacimientoUsuario == "febrero")) {
+    } else if ((diaNacimiento >= 20 &&
+        mesNacimiento == "enero") || (diaNacimiento <= 18 && mesNacimiento == "febrero")) {
         return acuario;
-    } else if ((diaNacimientoUsuario >= 19 &&
-        mesNacimientoUsuario == "febrero") || (diaNacimientoUsuario <= 20 && mesNacimientoUsuario == "marzo")) {
+    } else if ((diaNacimiento >= 19 &&
+        mesNacimiento == "febrero") || (diaNacimiento <= 20 && mesNacimiento == "marzo")) {
         return piscis;
     }
-
 }
-
-
-let retornoSignoSolar = signoSolar();
-console.log(retornoSignoSolar)
+/*signoAscendente debe utilizar el resultado de signoSolar y compararlo con la hora de nacimiento*/ 
+function signoAscendente(horaNacimiento) {
+    signoSolar ();
+    if (signoSolar == aries && horaNacimiento >=8 && horaNacimiento <=10) {
+        return tauro.nombre
+    }
+}
 
 const usuariosNuevos = document.getElementById('usuarios');
 
@@ -275,10 +274,12 @@ const mostrarUsuarios = () => {
                             <h4>Fecha de nacimiento: ${usuario.diaNacimientoUsuario} de ${usuario.mesNacimientoUsuario} de ${usuario.añoNacimientoUsuario}</h4>
                             <h5>Hora de nacimiento: ${usuario.horaNacimientoUsuario} : ${usuario.minutosNacimientoUsuario}</h5>
                             <h6>País de nacimiento: ${usuario.paisNacimientoUsuario}</h6>
-                            <h7>Sol: ${retornoSignoSolar}</h7>
+                            <h7>Sol: ${signoSolar(usuario.diaNacimientoUsuario, usuario.mesNacimientoUsuario)} </h7>
+                            <h8>Ascendente: ${signoAscendente(signoSolar(usuario.diaNacimientoUsuario, usuario.mesNacimientoUsuario), usuario.horaNacimientoUsuario)}</h8>
                         </div>
                         `
         usuariosNuevos.appendChild(div);
     })
 }
+
 
