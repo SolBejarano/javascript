@@ -219,7 +219,7 @@ function signoSolar(diaNacimientoUsuario, mesNacimientoUsuario) {
     if (diaNacimientoUsuario >= 21 && mesNacimientoUsuario == "marzo"
         || diaNacimientoUsuario <= 19 && mesNacimientoUsuario == "abril") {
         console.log(aries)
-        return aries;
+        return aries.nombre, aries.fechas, aries.elemento;
     } else if (diaNacimientoUsuario >= 20 &&
         mesNacimientoUsuario == "abril" || diaNacimientoUsuario <= 20 && mesNacimientoUsuario == "mayo") {
         return tauro;
