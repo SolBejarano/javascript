@@ -1,20 +1,21 @@
 
 
 class signo {
-    constructor(orden, nombre, fechas, regente, elemento, descripcion) {
+    constructor(orden, nombre, fechas, regente, elemento, descripcion, imagen) {
         this.orden = orden;
         this.nombre = nombre;
         this.fechas = fechas;
         this.regente = regente;
         this.elemento = elemento;
         this.descripcion = descripcion;
+        this.imagen = "./images/" + imagen;
     }
 }
 
 /*En esta clase creo la función para crear los signos que los voy a usar muchas veces en el desarrollo*/
 
-const aries = new signo("1", "Aries", "21 de marzo - 19 de abril", "Regido por Marte, el planeta de la sexualidad y la fuerza", "Signo de fuego", "Valiente y testarudo. Asume riesgos, es pionero, entusiasta, independiente y directo");
-const tauro = new signo("2", "Tauro", "20 de abril - 20 de mayo", "Regido por Venus, el planeta del amor y la belleza", "Signo de tierra", "Estable, paciente y resolutivo. Elegante, disfruta de los placeres de la vida, comer, dormir y el sexo");
+const aries = new signo("1", "Aries", "21 de marzo - 19 de abril", "Regido por Marte, el planeta de la sexualidad y la fuerza", "Signo de fuego", "Valiente y testarudo. Asume riesgos, es pionero, entusiasta, independiente y directo", "aries.jpg");
+const tauro = new signo("2", "Tauro", "20 de abril - 20 de mayo", "Regido por Venus, el planeta del amor y la belleza", "Signo de tierra", "Estable, paciente y resolutivo. Elegante, disfruta de los placeres de la vida, comer, dormir y el sexo", "tauro.jpg");
 const geminis = new signo("3", "Géminis", "21 de mayo - 20 de junio", "Regido por Mercurio, el planeta de la comunicación y el intelecto", "Signo de aire", "Comunicativo, intelectual e travieso. Necesita expresarse a través del habla, cambia de opinión rápidamente, abre posibiidades, amante de los viajes cortos");
 const cancer = new signo("4", "Cancer", "21 de junio - 22 de julio", "Regido por la Luna, que rige las emociones", "Signo de agua", "Cuidador, temperamental y maternal. Cuida de los suyos, necesita sentirse seguro y en casa, son muy empáticos, cuando se sienten atacados sacan sus pinzas");
 const leo = new signo("5", "Leo", "23 de julio - 22 de agosto", "Regido por el Sol, que rige el ego y la expresión de uno mismo", "Signo de fuego", "Cercano, leal, orgulloso y teatral. Le gusta impresionar, diferenciarse y mostrar el camino");
@@ -159,7 +160,6 @@ class usuario {
     constructor(nombreUsuario, diaNacimientoUsuario, mesNacimientoUsuario,
         añoNacimientoUsuario, horaNacimientoUsuario, minutosNacimientoUsuario,
         paisNacimientoUsuario) {
-
         this.nombreUsuario = nombreUsuario;
         this.diaNacimientoUsuario = diaNacimientoUsuario;
         this.mesNacimientoUsuario = mesNacimientoUsuario;
@@ -193,9 +193,9 @@ selectores*/
 
 function agregarUsuario() {
     const nombre = document.getElementById("input").value;
-    const diaNacimiento = document.getElementById("dias").value;
+    const diaNacimiento = parseInt(document.getElementById("dias").value);
     const añoNacimiento = document.getElementById("año").value;
-    const horaNacimiento = document.getElementById("hora").value;
+    const horaNacimiento = parseInt(document.getElementById("hora").value);
     const mesNacimiento = document.getElementById("meses").value;
     const minutosNacimiento = document.getElementById("minutos").value;
     const paisNacimiento = document.getElementById("pais").value;
@@ -212,53 +212,50 @@ equivalente a signo solar y ascendente*/
 const datosUsuario = JSON.parse(localStorage.getItem(usuarios));
 
 function signoSolar(diaNacimiento, mesNacimiento) {
+    let signoSolar = signo;
 
     if (diaNacimiento >= 21 && mesNacimiento == "marzo"
         || diaNacimiento <= 19 && mesNacimiento == "abril") {
         console.log(aries)
-        return aries.nombre;
+        return signoSolar = aries.nombre;
     } else if (diaNacimiento >= 20 &&
         mesNacimiento == "abril" || diaNacimiento <= 20 && mesNacimiento == "mayo") {
-        return tauro;
+        return signoSolar = tauro.nombre;
     } else if ((diaNacimiento >= 21 &&
         mesNacimiento == "mayo") || (diaNacimiento <= 20 && mesNacimiento == "junio")) {
         return geminis.nombre;
     } else if ((diaNacimiento >= 23 &&
         mesNacimiento == "julio") || (diaNacimiento <= 22 && mesNacimiento == "julio")) {
-        return cancer;
+        return cancer.nombre;
     } else if ((diaNacimiento >= 23 &&
         mesNacimiento == "julio") || (diaNacimiento <= 22 && mesNacimiento == "agosto")) {
-        return leo;
+        return leo.nombre;
     } else if ((diaNacimiento >= 23 &&
         mesNacimiento == "agosto") || (diaNacimiento <= 22 && mesNacimiento == "septiembre")) {
-        return virgo;
+        return virgo.nombre;
     } else if ((diaNacimiento >= 23 &&
         mesNacimiento == "septiembre") || (diaNacimiento <= 22 && mesNacimiento == "octubre")) {
-        return libra;
+        return libra.nombre;
     } else if ((diaNacimiento >= 23 &&
         mesNacimiento == "octubre") || (diaNacimiento <= 21 && mesNacimiento == "noviembre")) {
-        return escorpio;
+        return escorpio.nombre;
     } else if ((diaNacimiento >= 22 &&
         mesNacimiento == "noviembre") || (diaNacimiento <= 21 && mesNacimiento == "diciembre")) {
-        return sagitario;
+        return sagitario.nombre;
     } else if ((diaNacimiento >= 22 &&
         mesNacimiento == "diciembre") || (diaNacimiento <= 19 && mesNacimiento == "enero")) {
-        return capricornio;
+        return capricornio.nombre;
     } else if ((diaNacimiento >= 20 &&
         mesNacimiento == "enero") || (diaNacimiento <= 18 && mesNacimiento == "febrero")) {
-        return acuario;
+        return acuario.nombre;
     } else if ((diaNacimiento >= 19 &&
         mesNacimiento == "febrero") || (diaNacimiento <= 20 && mesNacimiento == "marzo")) {
-        return piscis;
+        return piscis.nombre;
     }
+    return signoSolar
 }
-/*signoAscendente debe utilizar el resultado de signoSolar y compararlo con la hora de nacimiento*/ 
-function signoAscendente(horaNacimiento) {
-    signoSolar ();
-    if (signoSolar == aries && horaNacimiento >=8 && horaNacimiento <=10) {
-        return tauro.nombre
-    }
-}
+
+/*signoAscendente debe utilizar el resultado de signoSolar y compararlo con la hora de nacimiento*/
 
 const usuariosNuevos = document.getElementById('usuarios');
 
@@ -267,6 +264,7 @@ const mostrarUsuarios = () => {
     usuarios.innerHTML = '';
     usuarios.forEach((usuario) => {
         console.log(usuario);
+        console.log(signo.descripcion);
         const div = document.createElement('div');
         div.innerHTML += `
                         <div class='usuarios'>
@@ -275,11 +273,28 @@ const mostrarUsuarios = () => {
                             <h5>Hora de nacimiento: ${usuario.horaNacimientoUsuario} : ${usuario.minutosNacimientoUsuario}</h5>
                             <h6>País de nacimiento: ${usuario.paisNacimientoUsuario}</h6>
                             <h7>Sol: ${signoSolar(usuario.diaNacimientoUsuario, usuario.mesNacimientoUsuario)} </h7>
-                            <h8>Ascendente: ${signoAscendente(signoSolar(usuario.diaNacimientoUsuario, usuario.mesNacimientoUsuario), usuario.horaNacimientoUsuario)}</h8>
-                        </div>
+                            <p>${signo.descripcion}</p>
+                            <img src="./images/${signo.imagen}">
+                            <h8>Ascendente: ${signoAscendente(usuario)} </h8>
+                            <img src="./images">
+                            </div>
                         `
         usuariosNuevos.appendChild(div);
     })
 }
 
+function signoAscendente(usuario) {
+    let {diaNacimientoUsuario, mesNacimientoUsuario, horaNacimientoUsuario} = usuario; 
+    signoSolarUsuario = signoSolar(diaNacimientoUsuario, mesNacimientoUsuario)
+    console.log(signoSolarUsuario == aries.nombre)
+    console.log(horaNacimientoUsuario)
+    if (signoSolarUsuario == aries.nombre && horaNacimientoUsuario >= 8 && horaNacimientoUsuario <= 10 
+        || signoSolarUsuario == tauro.nombre && horaNacimientoUsuario >= 6 && horaNacimientoUsuario <= 8
+        || signoSolarUsuario == geminis.nombre && horaNacimientoUsuario >= 4 && horaNacimientoUsuario <= 6 
+        || signoSolarUsuario == cancer.nombre && horaNacimientoUsuario >= 2 && horaNacimientoUsuario <= 4) {
+        console.log(tauro)
+        return tauro.nombre
+
+    }
+}
 
