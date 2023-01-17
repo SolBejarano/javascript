@@ -117,6 +117,89 @@
         gap: 30px;
         color: grey;
         font-family: $font-family;
-        font-size: 16px; 
+        font-size: 16px;
     }
+}
+
+.usuarios {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+    &__texto {
+        font-family: $font-family;
+        font-size: 14px;
+        padding: 10px;
+        font-weight: normal;
+    }
+    &__textoNombre {
+        font-family: $font-family-title;
+        font-size: 16px;
+    }
+
+    &__div {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        padding: 10px;
+    }
+}
+
+.cartaAstral {
+    width: 400px;
+    height: 400px;
+}
+
+.astrologia {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+    &__signos {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        align-items: center;
+        padding: 10px;
+
+    }
+
+    &__signo {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    &__frase {
+        font-family: $font-family-title;
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    &__titulos {
+        font-family: $font-family;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    &__imagen {
+        padding-bottom: 10px;
+        height: 280px;
+        width: 200px;
+
+    }
+
+    &__texto {
+        font-family: $font-family;
+        font-size: 14px;
+        width: 75%;
+        padding-top: 10px;
+    }
+
 }
