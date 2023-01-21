@@ -285,348 +285,70 @@ const mostrarUsuarios = () => {
     })
 }
 
-/*function signoAscendente(usuario) {
-    let { diaNacimientoUsuario, mesNacimientoUsuario, horaNacimientoUsuario } = usuario;
-    signoSolarUsuario = signoSolar(diaNacimientoUsuario, mesNacimientoUsuario)
-    console.log(signoSolarUsuario == aries)
-    console.log(horaNacimientoUsuario)
-    if (signoSolarUsuario == aries && horaNacimientoUsuario >= 8 && horaNacimientoUsuario < 10
-        || signoSolarUsuario == tauro && horaNacimientoUsuario >= 6 && horaNacimientoUsuario < 8
-        || signoSolarUsuario == geminis && horaNacimientoUsuario >= 4 && horaNacimientoUsuario < 6
-        || signoSolarUsuario == cancer && horaNacimientoUsuario >= 2 && horaNacimientoUsuario < 4
-        || signoSolarUsuario == leo && horaNacimientoUsuario >= 24 && horaNacimientoUsuario < 2
-        || signoSolarUsuario == virgo && horaNacimientoUsuario >= 22 && horaNacimientoUsuario < 24
-        || signoSolarUsuario == libra && horaNacimientoUsuario >= 20 && horaNacimientoUsuario < 22
-        || signoSolarUsuario == escorpio && horaNacimientoUsuario >= 18 && horaNacimientoUsuario < 20
-        || signoSolarUsuario == sagitario && horaNacimientoUsuario >= 16 && horaNacimientoUsuario < 18
-        || signoSolarUsuario == capricornio && horaNacimientoUsuario >= 14 && horaNacimientoUsuario < 16
-        || signoSolarUsuario == acuario && horaNacimientoUsuario >= 12 && horaNacimientoUsuario < 14
-        || signoSolarUsuario == piscis && horaNacimientoUsuario >= 10 && horaNacimientoUsuario < 12) {
-        console.log(tauro)
-        return tauro
-    } else if (signoSolarUsuario == aries && horaNacimientoUsuario >= 10 && horaNacimientoUsuario < 12
-        || signoSolarUsuario == tauro && horaNacimientoUsuario >= 8 && horaNacimientoUsuario < 10
-        || signoSolarUsuario == geminis && horaNacimientoUsuario >= 6 && horaNacimientoUsuario < 8
-        || signoSolarUsuario == cancer && horaNacimientoUsuario >= 4 && horaNacimientoUsuario < 6
-        || signoSolarUsuario == leo && horaNacimientoUsuario >= 2 && horaNacimientoUsuario < 4
-        || signoSolarUsuario == virgo && horaNacimientoUsuario >= 24 && horaNacimientoUsuario < 2
-        || signoSolarUsuario == libra && horaNacimientoUsuario >= 22 && horaNacimientoUsuario < 24
-        || signoSolarUsuario == escorpio && horaNacimientoUsuario >= 20 && horaNacimientoUsuario < 22
-        || signoSolarUsuario == sagitario && horaNacimientoUsuario >= 18 && horaNacimientoUsuario < 20
-        || signoSolarUsuario == capricornio && horaNacimientoUsuario >= 16 && horaNacimientoUsuario < 18
-        || signoSolarUsuario == acuario && horaNacimientoUsuario >= 14 && horaNacimientoUsuario < 16
-        || signoSolarUsuario == piscis && horaNacimientoUsuario >= 12 && horaNacimientoUsuario < 14) {
-        console.log(geminis)
-        return geminis
-    } else if (signoSolarUsuario == aries && horaNacimientoUsuario >= 12 && horaNacimientoUsuario < 14
-        || signoSolarUsuario == tauro && horaNacimientoUsuario >= 10 && horaNacimientoUsuario < 12
-        || signoSolarUsuario == geminis && horaNacimientoUsuario >= 8 && horaNacimientoUsuario < 10
-        || signoSolarUsuario == cancer && horaNacimientoUsuario >= 6 && horaNacimientoUsuario < 8
-        || signoSolarUsuario == leo && horaNacimientoUsuario >= 4 && horaNacimientoUsuario < 6
-        || signoSolarUsuario == virgo && horaNacimientoUsuario >= 2 && horaNacimientoUsuario < 4
-        || signoSolarUsuario == libra && horaNacimientoUsuario >= 24 && horaNacimientoUsuario < 22
-        || signoSolarUsuario == escorpio && horaNacimientoUsuario >= 22 && horaNacimientoUsuario < 24
-        || signoSolarUsuario == sagitario && horaNacimientoUsuario >= 20 && horaNacimientoUsuario < 22
-        || signoSolarUsuario == capricornio && horaNacimientoUsuario >= 18 && horaNacimientoUsuario < 20
-        || signoSolarUsuario == acuario && horaNacimientoUsuario >= 16 && horaNacimientoUsuario < 18
-        || signoSolarUsuario == piscis && horaNacimientoUsuario >= 14 && horaNacimientoUsuario < 16) {
-        console.log(geminis)
-        return cancer }
-        }*/
-
 
 function signoAscendente(usuario) {
     let { diaNacimientoUsuario, mesNacimientoUsuario, horaNacimientoUsuario } = usuario;
-    signoSolarUsuario = signoSolar(diaNacimientoUsuario, mesNacimientoUsuario)
-    console.log(signoSolarUsuario == aries)
-    console.log(horaNacimientoUsuario)
+    signoSolarUsuario = signoSolar(diaNacimientoUsuario, mesNacimientoUsuario);
+    console.log(signoSolarUsuario == aries);
+    console.log(horaNacimientoUsuario);
 
-   switch (horaNacimientoUsuario >= 8 < 10) {
-         case signoSolarUsuario == aries: return tauro;
-             break;
-         case signoSolarUsuario == tauro: return geminis;
-             break;
-         case signoSolarUsuario == geminis: return cancer;
-             break;
-         case signoSolarUsuario == cancer: return leo;
-             break;
-         case signoSolarUsuario == leo: return virgo;
-             break;
-         case signoSolarUsuario == virgo: return libra;
-             break;
-         case signoSolarUsuario == libra: return escorpio;
-             break;
-         case signoSolarUsuario == escorpio: return sagitario;
-             break;
-         case signoSolarUsuario == sagitario: return capricorpio;
-             break;
-         case signoSolarUsuario == capricornio: return acuario;
-             break;
-         case signoSolarUsuario == acuario: return piscis;
-             break;
-         case signoSolarUsuario == piscis: return aries;
-             break;
-     }
+    switch (horaNacimientoUsuario >= 8 < 10) {
+         default:  return signos[signos.indexOf(signoSolarUsuario) + 1];
+         case signos[signos.indexOf(signoSolarUsuario) + 1] == signos.length: return signos[signos.indexOf(signoSolarUsuario) - 12];
+     } 
+ 
      switch (horaNacimientoUsuario >= 10 < 12) {
-         case signoSolarUsuario == aries: return geminis;
-             break;
-         case signoSolarUsuario == tauro: return cancer;
-             break;
-         case signoSolarUsuario == geminis: return leo;
-             break;
-         case signoSolarUsuario == cancer: return virgo;
-             break;
-         case signoSolarUsuario == leo: return libra;
-             break;
-         case signoSolarUsuario == virgo: return escorpio;
-             break;
-         case signoSolarUsuario == libra: return sagitario;
-             break;
-         case signoSolarUsuario == escorpio: return capricornio;
-             break;
-         case signoSolarUsuario == sagitario: return acuario;
-             break;
-         case signoSolarUsuario == capricornio: return piscis;
-             break;
-         case signoSolarUsuario == acuario: return aries;
-             break;
-         case signoSolarUsuario == piscis: return tauro;
-             break;
+         case signoSolarUsuario == piscis : return aries
+         default:  return signos[signos.indexOf(signoSolarUsuario) + 2];
      }
-     switch (horaNacimientoUsuario >= 12 < 14) {
-         case signoSolarUsuario == aries: return cancer;
-             break;
-         case signoSolarUsuario == tauro: return leo;
-             break;
-         case signoSolarUsuario == geminis: return virgo;
-             break;
-         case signoSolarUsuario == cancer: return libra;
-             break;
-         case signoSolarUsuario == leo: return escorpio;
-             break;
-         case signoSolarUsuario == virgo: return sagitario;
-             break;
-         case signoSolarUsuario == libra: return capricornio;
-             break;
-         case signoSolarUsuario == escorpio: return acuario;
-             break;
-         case signoSolarUsuario == sagitario: return piscis;
-             break;
-         case signoSolarUsuario == capricornio: return aries;
-             break;
-         case signoSolarUsuario == acuario: return tauro;
-             break;
-         case signoSolarUsuario == piscis: return geminis;
-             break;
-     }
-     switch (horaNacimientoUsuario >= 14 < 16) {
-         case signoSolarUsuario == aries: return leo;
-             break;
-         case signoSolarUsuario == tauro: return virgo;
-             break;
-         case signoSolarUsuario == geminis: return libra;
-             break;
-         case signoSolarUsuario == cancer: return escorpio;
-             break;
-         case signoSolarUsuario == leo: return sagitario;
-             break;
-         case signoSolarUsuario == virgo: return capricornio;
-             break;
-         case signoSolarUsuario == libra: return acuario;
-             break;
-         case signoSolarUsuario == escorpio: return piscis;
-             break;
-         case signoSolarUsuario == sagitario: return aries;
-             break;
-         case signoSolarUsuario == capricornio: return tauro;
-             break;
-         case signoSolarUsuario == acuario: return geminis;
-             break;
-         case signoSolarUsuario == piscis: return cancer;
-             break;
-     }
-     switch (horaNacimientoUsuario >= 16 < 18) {
-         case signoSolarUsuario == aries: return virgo;
-             break;
-         case signoSolarUsuario == tauro: return libra;
-             break;
-         case signoSolarUsuario == geminis: return escorpio;
-             break;
-         case signoSolarUsuario == cancer: return sagitario;
-             break;
-         case signoSolarUsuario == leo: return capricornio;
-             break;
-         case signoSolarUsuario == virgo: return acuario;
-             break;
-         case signoSolarUsuario == libra: return piscis;
-             break;
-         case signoSolarUsuario == escorpio: return aries;
-             break;
-         case signoSolarUsuario == sagitario: return tauro;
-             break;
-         case signoSolarUsuario == capricornio: return geminis;
-             break;
-         case signoSolarUsuario == acuario: return cancer;
-             break;
-         case signoSolarUsuario == piscis: return leo;
-             break;
-     }
-     switch (horaNacimientoUsuario >= 18 < 20) {
-         case signoSolarUsuario == aries: return libra;
-             break;
-         case signoSolarUsuario == tauro: return escorpio;
-             break;
-         case signoSolarUsuario == geminis: return sagitario;
-             break;
-         case signoSolarUsuario == cancer: return capricornio;
-             break;
-         case signoSolarUsuario == leo: return acuario;
-             break;
-         case signoSolarUsuario == virgo: return piscis;
-             break;
-         case signoSolarUsuario == libra: return aries;
-             break;
-         case signoSolarUsuario == escorpio: return tauro;
-             break;
-         case signoSolarUsuario == sagitario: return geminis;
-             break;
-         case signoSolarUsuario == capricornio: return cancer;
-             break;
-         case signoSolarUsuario == acuario: return leo;
-             break;
-         case signoSolarUsuario == piscis: return virgo;
-             break;
-     }
-     switch (horaNacimientoUsuario >= 20 < 22) {
-         case signoSolarUsuario == aries: return escorpio;
-             break;
-         case signoSolarUsuario == tauro: return sagitario;
-             break;
-         case signoSolarUsuario == geminis: return capricornio;
-             break;
-         case signoSolarUsuario == cancer: return acuario;
-             break;
-         case signoSolarUsuario == leo: return piscis;
-             break;
-         case signoSolarUsuario == virgo: return aries;
-             break;
-         case signoSolarUsuario == libra: return tauro;
-             break;
-         case signoSolarUsuario == escorpio: return geminis;
-             break;
-         case signoSolarUsuario == sagitario: return cancer;
-             break;
-         case signoSolarUsuario == capricornio: return leo;
-             break;
-         case signoSolarUsuario == acuario: return virgo;
-             break;
-         case signoSolarUsuario == piscis: return libra;
-             break;
-     }
-     switch (horaNacimientoUsuario >= 22 < 24) {
-         case signoSolarUsuario == aries: return sagitario;
-             break;
-         case signoSolarUsuario == tauro: return capricornio;
-             break;
-         case signoSolarUsuario == geminis: return acuario;
-             break;
-         case signoSolarUsuario == cancer: return piscis;
-             break;
-         case signoSolarUsuario == leo: return aries;
-             break;
-         case signoSolarUsuario == virgo: return tauro;
-             break;
-         case signoSolarUsuario == libra: return geminis;
-             break;
-         case signoSolarUsuario == escorpio: return cancer;
-             break;
-         case signoSolarUsuario == sagitario: return leo;
-             break;
-         case signoSolarUsuario == capricornio: return virgo;
-             break;
-         case signoSolarUsuario == acuario: return libra;
-             break;
-         case signoSolarUsuario == piscis: return escorpio;
-             break;
-     }
-     switch (horaNacimientoUsuario >= 24 < 2) {
-         case signoSolarUsuario == aries: return capricornio;
-             break;
-         case signoSolarUsuario == tauro: return acuario;
-             break;
-         case signoSolarUsuario == geminis: return piscis;
-             break;
-         case signoSolarUsuario == cancer: return aries;
-             break;
-         case signoSolarUsuario == leo: return tauro;
-             break;
-         case signoSolarUsuario == virgo: return geminis;
-             break;
-         case signoSolarUsuario == libra: return cancer;
-             break;
-         case signoSolarUsuario == escorpio: return leo;
-             break;
-         case signoSolarUsuario == sagitario: return virgo;
-             break;
-         case signoSolarUsuario == capricornio: return libra;
-             break;
-         case signoSolarUsuario == acuario: return escorpio;
-             break;
-         case signoSolarUsuario == piscis: return sagitario;
-             break;
-     }
-     switch (horaNacimientoUsuario >= 2 < 4) {
-         case signoSolarUsuario == aries: return acuario;
-             break;
-         case signoSolarUsuario == tauro: return piscis;
-             break;
-         case signoSolarUsuario == geminis: return aries;
-             break;
-         case signoSolarUsuario == cancer: return tauro;
-             break;
-         case signoSolarUsuario == leo: return geminis;
-             break;
-         case signoSolarUsuario == virgo: return cancer;
-             break;
-         case signoSolarUsuario == libra: return leo;
-             break;
-         case signoSolarUsuario == escorpio: return virgo;
-             break;
-         case signoSolarUsuario == sagitario: return libra;
-             break;
-         case signoSolarUsuario == capricornio: return escorpio;
-             break;
-         case signoSolarUsuario == acuario: return sagitario;
-             break;
-         case signoSolarUsuario == piscis: return capricornio;
-             break;
-     }
-     switch (horaNacimientoUsuario >= 4 < 6) {
-         case signoSolarUsuario == aries: return piscis;
-             break;
-         case signoSolarUsuario == tauro: return aries;
-             break;
-         case signoSolarUsuario == geminis: return tauro;
-             break;
-         case signoSolarUsuario == cancer: return geminis;
-             break;
-         case signoSolarUsuario == leo: return cancer;
-             break;
-         case signoSolarUsuario == virgo: return leo;
-             break;
-         case signoSolarUsuario == libra: return virgo;
-             break;
-         case signoSolarUsuario == escorpio: return libra;
-             break;
-         case signoSolarUsuario == sagitario: return escorpio;
-             break;
-         case signoSolarUsuario == capricornio: return sagitario;
-             break;
-         case signoSolarUsuario == acuario: return capricornio;
-             break;
-         case signoSolarUsuario == piscis: return acuario;
-             break;
-     }
-     if (horaNacimientoUsuario >= 6 < 8) {
-         return signoSolarUsuario
-     } }
+
+  /*  if (horaNacimientoUsuario >= 8 < 10 && signos[signos.indexOf(signoSolarUsuario) + 1] == signos.lenght) {
+        return signos[signos.indexOf(signoSolarUsuario) - 11]
+    } else if (horaNacimientoUsuario >= 8 < 10) {
+        return signos[signos.indexOf(signoSolarUsuario) + 1];
+    } else if (horaNacimientoUsuario >= 10 < 12 && signos[signos.indexOf(signoSolarUsuario) + 2] == signos.lenght) {
+        return signos[signos.indexOf(signoSolarUsuario) - 10];
+    } else if (horaNacimientoUsuario >= 10 < 12) {
+        return signos[signos.indexOf(signoSolarUsuario) + 2];
+    } else if (horaNacimientoUsuario >= 12 < 14 && signos[signos.indexOf(signoSolarUsuario) + 3] == signos.lenght) {
+        return signos[signos.indexOf(signoSolarUsuario) - 9];
+    } else if (horaNacimientoUsuario >= 12 < 14) {
+        return signos[signos.indexOf(signoSolarUsuario) + 3];
+    } else if (horaNacimientoUsuario >= 14 < 16 && (signos[signos.indexOf(signoSolarUsuario) + 4] == signos.lenght)) {
+        return signos[signos.indexOf(signoSolarUsuario) - 8];
+    } else if (horaNacimientoUsuario >= 14 < 16) {
+        return signos[signos.indexOf(signoSolarUsuario) + 4];
+    } else if (horaNacimientoUsuario >= 16 < 18 && signos[signos.indexOf(signoSolarUsuario) + 5] == signos.lenght) {
+        return signos[signos.indexOf(signoSolarUsuario) - 7];
+    } else if (horaNacimientoUsuario >= 16 < 18) {
+        return signos[signos.indexOf(signoSolarUsuario) + 5];
+    } else if (horaNacimientoUsuario >= 18 < 20 && signos[signos.indexOf(signoSolarUsuario) + 6] == signos.lenght) {
+        return signos[signos.indexOf(signoSolarUsuario) - 6];
+    } else if (horaNacimientoUsuario >= 18 < 20) {
+        return signos[signos.indexOf(signoSolarUsuario) + 6];
+    } else if (horaNacimientoUsuario >= 20 < 22 && signos[signos.indexOf(signoSolarUsuario) + 7] == signos.lenght) {
+        return signos[signos.indexOf(signoSolarUsuario) - 5];
+    } else if (horaNacimientoUsuario >= 20 < 22) {
+        return signos[signos.indexOf(signoSolarUsuario) + 7];
+    } else if (horaNacimientoUsuario >= 22 < 24 && signos[signos.indexOf(signoSolarUsuario) + 8] == signos.lenght) {
+        return signos[signos.indexOf(signoSolarUsuario) - 4];
+    } else if (horaNacimientoUsuario >= 22 < 24) {
+        return signos[signos.indexOf(signoSolarUsuario) + 8];
+    } else if (horaNacimientoUsuario >= 24 < 2 && signos[signos.indexOf(signoSolarUsuario) + 9] == signos.lenght) {
+        return signos[signos.indexOf(signoSolarUsuario) - 3];
+    } else if (horaNacimientoUsuario >= 24 < 2) {
+        return signos[signos.indexOf(signoSolarUsuario) + 9];
+    } else if (horaNacimientoUsuario >= 2 < 4 && signos[signos.indexOf(signoSolarUsuario) + 10] == signos.lenght) {
+        return signos[signos.indexOf(signoSolarUsuario) - 2];
+    } else if (horaNacimientoUsuario >= 2 < 4) {
+        return signos[signos.indexOf(signoSolarUsuario) + 10];
+    } else if (horaNacimientoUsuario >= 4 < 6 && signos[signos.indexOf(signoSolarUsuario) + 11] == signos.lenght) {
+        return signos[signos.indexOf(signoSolarUsuario) - 1];
+    } else if (horaNacimientoUsuario >= 4 < 6) {
+        return signos[signos.indexOf(signoSolarUsuario) + 11];
+    } */
+
+}
+
+
+
